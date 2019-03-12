@@ -28,7 +28,7 @@ class PhoneNumber:
         return self.international
 
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     num = '+380660000666'
     phone = PhoneNumber.fromstring(num)
     print(phone.Z)
