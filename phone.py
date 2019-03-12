@@ -13,10 +13,12 @@ class PhoneNumber:
     @classmethod
     def fromstring(cls, number):
         """ number format: '+380YYNNNNNNN' """
-        Z, YY, N = number[1:4], number[4:6], number[6:]
-        if len(Z) == 3 and len(YY) == 2 and len(N) == 7:
-            return cls(Z, YY, N)
-        return None
+        try:
+            Z, YY, N = number[1:4], number[4:6], number[6:]
+            if len(Z) == 3 and len(YY) == 2 and len(N) == 7:
+                return cls(Z, YY, N)
+        except TypeError:
+            return None
 
     @property
     def international(self):
